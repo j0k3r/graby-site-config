@@ -7,3 +7,11 @@ prune: no
 test_url: http://www.lefigaro.fr/environnement/2011/11/10/01029-20111110ARTFIG00801-la-chine-confrontee-a-un-immense-defi-ecologique.php
 test_url: http://www.lefigaro.fr/conjoncture/2012/11/20/20002-20121120ARTFIG00609-l-usager-devrait-payer-plus-pour-financer-les-transports.php
 test_url: http://www.lefigaro.fr/social/2015/03/10/09010-20150310ARTFIG00312-encore-une-annee-noire-pour-l-emploi-salarie.php
+
+requires_login: true
+not_logged_in_xpath: //div[@class="fig-article-promo"]
+login_uri: https://plus.lefigaro.fr/user?app_id=81325031242245596367369127435013
+login_username_field: name
+login_password_field: pass
+login_extra_fields: form_build_id=@=xpath('//form[@id="fp-user-services-fp-auth-form"]//input[@name="form_build_id"]', request_html('https://plus.lefigaro.fr/user?app_id=81325031242245596367369127435013'))
+login_extra_fields: form_id=edit-fp-user-services-fp-auth-form
