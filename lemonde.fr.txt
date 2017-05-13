@@ -8,13 +8,19 @@ date: //time[@itemprop='dateModified']/@datetime
 # Publication date
 date: //time[@itemprop='datePublished']/@datetime
 
-
 body: //div[@id='articleBody']
 
 # Remove the insane "conjugaison.lemonde.fr" links:
 find_string: <a target='_blank' onclick='return false;' class='lien_interne conjug'
-replace_string: <input type='hidden' style='display:none;' 
+replace_string: <input type='hidden' style='display:none;'
 
 prune: no
 
 test_url: http://www.lemonde.fr/economie/article/2011/07/05/moody-s-abaisse-la-note-du-portugal-de-quatre-crans_1545237_3234.html
+
+requires_login: true
+login_uri: https://secure.lemonde.fr/sfuser/connexion
+login_username_field: connection[mail]
+login_password_field: connection[password]
+login_extra_fields: connection[_token]=@=xpath('//form[@name="connection"]/input[@name="connection[_token]"]', request_html('https://secure.lemonde.fr/sfuser/connexion'))
+login_extra_fields: connection[stay_connected]=1
