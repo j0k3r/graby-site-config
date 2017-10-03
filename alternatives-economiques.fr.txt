@@ -21,15 +21,8 @@ login_password_field: password
 #not_logged_in_xpath: //h2[@class="title_reserve_article"]
 #not_logged_in_xpath: //body[contains(@class,"not-logged-in")]
 
-# Remove highlighted quotes
-##strip_id_or_class: accroche
-##strip_id_or_class: encart
-
-# Remove "Lire aussi" blocks
-##strip: //p[@class='lire']
-
-# Remove footers for Le Monde Festival
-##strip: //aside[@class='fenetre']
+# Remove Footer
+strip: //div[contains(concat(' ',normalize-space(@class),' '),' o-page__footer ')]
 
 ##prune: no
 
