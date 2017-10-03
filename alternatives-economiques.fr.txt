@@ -1,0 +1,36 @@
+title: //h1[contains(concat(' ',normalize-space(@class),' '),' o-head__title ')]
+
+author: //header[contains(concat(' ',normalize-space(@class),' '),' o-page__content__head ')]//div[contains(concat(' ',normalize-space(@class),' '),' o-infos ')]//a[contains(concat(' ',normalize-space(@class),' '),' o-infos__author ')]
+#header.o-page__content__head div.o-infos a.o-infos__author
+##author: //span[@id='publisher']
+
+# Last edition date (if any)
+# Publication date
+
+date: //header[contains(concat(' ',normalize-space(@class),' '),' o-page__content__head ')]//div[contains(concat(' ',normalize-space(@class),' '),' o-infos ')]//time[contains(concat(' ',normalize-space(@class),' '),' o-infos__date ')]
+#header.o-page__content__head div.o-infos time.o-infos__date
+##date: //time[@itemprop='datePublished']/@datetime
+
+body: //div[contains(concat(' ',normalize-space(@class),' '),' o-page__content ')]
+##body: //div[@id='articleBody']|//section[@class='contenu']//div[@class='texte']
+
+requires_login: yes
+login_uri: https://www.alternatives-economiques.fr/index.php?redirection=frontpage
+login_username_field: login
+login_password_field: password
+#not_logged_in_xpath: //h2[@class="title_reserve_article"]
+#not_logged_in_xpath: //body[contains(@class,"not-logged-in")]
+
+# Remove highlighted quotes
+##strip_id_or_class: accroche
+##strip_id_or_class: encart
+
+# Remove "Lire aussi" blocks
+##strip: //p[@class='lire']
+
+# Remove footers for Le Monde Festival
+##strip: //aside[@class='fenetre']
+
+##prune: no
+
+test_url: https://www.alternatives-economiques.fr/transformation-cice-priorite-aux-emplois-qualifies/00080750
