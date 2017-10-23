@@ -3,10 +3,10 @@ body: //div[@id='wsj-article-wrap']
 # is this still used?
 body: //div[@id='article_story_body']
 
-author: //h3[@class='byline']/a
+author: //meta[@name="author"]/@content
 # for slide show content
 body: //ul[@id='imageSlide']//li[@class='firstSlide']//img | (//div[@class='txt_body']//p)[1]
-date: //li[@class='dateStamp']/small
+date: //meta[@itemprop="dateCreated"]/@content
 
 strip_id_or_class: insetFullBracket
 strip_id_or_class: insettipBox
@@ -31,3 +31,12 @@ test_url: http://www.wsj.com/news/articles/SB10001424052702304626304579509100018
 test_url: http://www.wsj.com/article/SB10001424052970203363504577185322849515102.html
 # slide show
 test_url: http://www.wsj.com/article/SB10001424052970204791104577110550376458164.html
+test_url: https://www.wsj.com/articles/more-cyberattack-victims-emerge-as-agencies-search-for-clues-1494671938
+
+requires_login: true
+not_logged_in_xpath: //div[@class="wsj-snippet-login"]
+
+login_uri: https://sso.accounts.dowjones.com/login?client=5hssEAdMy0mJTICnJNvC9TXEw3Va7jfO&protocol=oauth2&state=brand%3Dwsj%26opts%3D3%26url%3Dhttp%253A%252F%252Fwww.wsj.com%252Farticles%252Fmore-cyberattack-victims-emerge-as-agencies-search-for-clues-1494671938&redirect_uri=https%3A%2F%2Faccounts.dowjones.com%2Fauth%2Fcallback&scope=openid%20idp_id&response_type=code&nonce=b2696c65-01cd-45db-ba29-5a0743830a1a&connection=DJldap&ui_locales=en-us-x-wsj-3&mg=prod%2Faccounts-wsj#!/signin
+login_username_field: username
+login_password_field: password
+login_extra_fields: rememberme=1
