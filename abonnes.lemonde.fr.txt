@@ -1,7 +1,6 @@
 title: //h1
 
 # We can have multiple authors
-author: //span[@id='publisher']
 author: //a[@class='auteur']
 
 # Last edition date (if any)
@@ -9,7 +8,7 @@ date: //time[@itemprop='dateModified']/@datetime
 # Publication date
 date: //time[@itemprop='datePublished']/@datetime
 
-
+# Body
 body: //div[@id='articleBody']|//section[@class='contenu']//div[@class='texte']
 
 # Remove highlighted quotes
