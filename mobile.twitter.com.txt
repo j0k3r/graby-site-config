@@ -4,6 +4,8 @@ author: (//*[contains(@class, 'UserNames-displayName') or contains(@class, 'full
 body: (//div[contains(@class, 'TweetDetail-text') or contains(@class, 'tweet-text')])[1]
 date: (//div[contains(@class, 'TweetDetail-timeAndGeo') or contains(@class, 'metadata')])[1]
 
+single_page_link: //table[contains(@class, 'main-tweet')]//a[contains(@class, 'twitter_external_link') and contains(@rel, 'nofollow')]/@data-expanded-url
+
 parser: html5php
 
 prune: no

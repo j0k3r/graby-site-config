@@ -7,6 +7,8 @@ date: //span[contains(@class, 'js-short-timestamp')]/@data-time
 author: (//div[contains(@class, 'fullname')])[1]
 body: (//div[contains(@class, 'TweetDetail-text')])[1]
 
+single_page_link: //div[@tabindex = 0]//a[contains(@class, 'twitter-timeline-link') and contains(@rel, 'nofollow')]/@data-expanded-url
+
 parser: html5php
 
 prune: no
