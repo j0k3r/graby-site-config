@@ -1,10 +1,18 @@
-body: //div[@class='byline' or @id='storyEmbSlide' or @id='mainBodyArea']
-strip: //p[@class='comments']
-strip: //div[@id='storyEmbSlide']//div[contains(@class, "hide")]
-strip: //div[@id='tmg-related-links' or @id='outbrain-related-links' or @id='onespot-related-links']
-strip: //p[@class='bbpTweet']/span[@class='timestamp']
-strip: //p[@class='bbpTweet']/span[@class='metadata']//img
+body: //article[@itemprop='articleBody']
+author: //span[@class='byline__author-name']
+date: //time[@class='article-date-published']
 tidy: no
 prune: no
 
 test_url: http://www.telegraph.co.uk/news/worldnews/europe/ireland/8663451/Is-Ireland-divorcing-from-the-Catholic-Church.html
+
+requires_login: true
+not_logged_in_xpath: //div[@class="wsj-snippet-login"]
+
+login_uri: https://secure.telegraph.co.uk/secure/login/
+login_username_field: identifier
+login_password_field: auth_key
+login_extra_fields: remember_me=1
+login_extra_fields: grant_type="password"
+login_extra_fields: credential_type="EMAIL_PASSWORD"
+login_extra_fields: client_id="tcuk"
