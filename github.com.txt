@@ -5,6 +5,7 @@ date: //*[@data-testid='latest-commit-details']//relative-time/@datetime
 body: //div[@id='wiki-body']
 body: //*[@itemprop='text'][ancestor::*[@itemscope][1][@itemtype='http://schema.org/SoftwareSourceCode']]
 body: //article[1]
+body: //div[@data-test-selector='body-content']
 
 skip_id_or_class: BorderGrid-cell
 skip_id_or_class: js-repo-nav
@@ -19,4 +20,5 @@ prune: no
 tidy: no
 
 test_url: https://github.com/wallabag/wallabag
+test_url: https://github.com/wallabag/wallabag/releases/tag/2.6.14
 test_url: https://github.com/wallabag/wallabag/wiki/Auto%E2%80%90Updating-wallabag's-site%E2%80%90depended-config
