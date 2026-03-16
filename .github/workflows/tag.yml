@@ -27,7 +27,7 @@ jobs:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "Install dependencies with Composer"
-        uses: "ramsey/composer-install@v3"
+        uses: "ramsey/composer-install@v4"
 
       - name: "Configure upstream"
         run: "git remote add upstream https://github.com/fivefilters/ftr-site-config.git"
